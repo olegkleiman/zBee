@@ -1,4 +1,4 @@
-// flow
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchQuery, graphql } from 'react-relay';
@@ -35,8 +35,8 @@ class DataVis extends React.Component {
   async componentDidMount() {
 
       const queryVariables = {
-        from: '14/01/2019', //this.props.app.fromDate,
-        till: '22/01/2019' //this.props.app.tillDate
+        from: '09/24/2018', //this.props.app.fromDate,
+        till: '09/25/2018' //this.props.app.tillDate
       };
 
       try {
