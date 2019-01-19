@@ -20,7 +20,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-palm": "0.8.1",
-    "react-redux": "^6.0.0",
+    "react-redux": "5.0.7",
     "react-relay": "1.6.2",
     "react-virtualized": "^9.21.0",
     "react-vis": "1.11.2",
