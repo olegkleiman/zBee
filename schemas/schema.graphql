@@ -1,0 +1,20 @@
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+scalar Date
+
+interface INode {
+  id: ID!
+}
+
+type Query {
+  keplerDataUrl(from: Date!, till: Date!): String
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+

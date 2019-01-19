@@ -37,21 +37,6 @@ const reducer = (state = INITIAL_STATE, action) => {
   return state;
 }
 
-// const reducer = handleActions({
-//
-// }, INITIAL_STATE);
-
-// const reducer = handleActions(
-//   {
-//     [increment]: state => ({ ...state, fromDate: _.assign({}, state, {
-//                                                               fromDate: action.data.date
-//                                                             })
-//    }),
-//     [decrement]: state => ({ ...state, counter: state.counter - 1 })
-//   },
-//   defaultState
-// );
-
 const reducers = combineReducers({
   keplerGl: keplerGlReducer,
   app: reducer
