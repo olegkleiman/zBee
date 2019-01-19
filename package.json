@@ -9,8 +9,17 @@
   "dependencies": {
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
+    "kepler.gl": "0.1.6",
+    "lodash": "^4.17.11",
+    "moment": "^2.23.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-palm": "0.8.1",
+    "react-redux": "^6.0.0",
+    "react-virtualized": "^9.21.0",
+    "react-vis": "1.11.2",
+    "redux": "4.0.0",
+    "redux-actions": "2.6.1",
     "webpack": "^4.28.4"
   },
   "devDependencies": {
