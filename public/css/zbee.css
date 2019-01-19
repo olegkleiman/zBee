@@ -1,0 +1,10 @@
+body {
+    font-family: "Arimo", "Rubik","Roboto", "Helvetica", "Arial", sans-serif;
+    background: #eee !important;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+:placeholder-shown {
+  color: white;
+}

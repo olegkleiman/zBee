@@ -58,7 +58,7 @@ var config = {
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      MapboxAccessToken: 'pk.eyJ1Ijoib2xlZ2tsZWltYW4iLCJhIjoiY2puM251bDk1Mmc2djNrcWxlYWU2MWY4NyJ9.vyNX_-c-ax1erGoOkAuH0g'
+      MapboxAccessToken: 'pk.eyJ1Ijoib2xlZ2tsZWltYW4iLCJhIjoiY2pyM3owa3NhMDB0aTQzcG5jaHZrbHRkaCJ9.hG7WaJ_AuRNl2muX7L0R0Q'
     })
   ]
 

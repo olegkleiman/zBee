@@ -83,6 +83,7 @@ class DataVis extends React.Component {
                     id="map"
                     width={width}
                     height={height}
+                    placeholder={'ddd'}
                   />
                 )}
               </AutoSizer>
@@ -92,10 +93,9 @@ class DataVis extends React.Component {
 };
 
 const mapStateToProps = state => state;
-// const dispatchToProps = (dispatch, props) => ({
-//   dispatch,
-//   keplerGlDispatch: forwardTo('map', dispatch)
-// });
-const dispatchToProps = dispatch => ({dispatch});
+const dispatchToProps = (dispatch, props) => ({
+  dispatch,
+  keplerGlDispatch: forwardTo('map', dispatch)
+});
 
 export default connect(mapStateToProps, dispatchToProps)(DataVis);
