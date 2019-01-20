@@ -2,36 +2,22 @@
   "version": "v1",
   "config": {
     "visState": {
-      "filters": [
-        {
-          "dataId": "my_data",
-          "id": "09vn5a0of",
-          "name": "snap_datetime",
-          "type": "timeRange",
-          "value": [
-            1421300098000,
-            1421352890000
-          ],
-          "enlarged": true,
-          "plotType": "histogram",
-          "yAxis": null
-        }
-      ],
+      "filters": [],
       "layers": [
         {
-          "id": "6vcue0g",
+          "id": "aobuadn",
           "type": "point",
           "config": {
             "dataId": "my_data",
-            "label": "first snap",
+            "label": "origin",
             "color": [
-              18,
-              147,
-              154
+              255,
+              203,
+              153
             ],
             "columns": {
-              "lat": "first_camera_lat",
-              "lng": "first_camera_lon",
+              "lat": "origin_lat",
+              "lng": "origin_lon",
               "altitude": null
             },
             "isVisible": true,
@@ -59,59 +45,20 @@
                 50
               ],
               "hi-precision": false
-            }
-          },
-          "visualChannels": {
-            "colorField": {
-              "name": "trip_distance",
-              "type": "real"
             },
-            "colorScale": "quantile",
-            "sizeField": null,
-            "sizeScale": "linear"
-          }
-        },
-        {
-          "id": "bg19qua",
-          "type": "point",
-          "config": {
-            "dataId": "my_data",
-            "label": "last snap",
-            "color": [
-              221,
-              178,
-              124
-            ],
-            "columns": {
-              "lat": "second_camera_lat",
-              "lng": "second_camera_lon",
-              "altitude": null
-            },
-            "isVisible": true,
-            "visConfig": {
-              "radius": 10,
-              "fixedRadius": false,
-              "opacity": 0.8,
-              "outline": false,
-              "thickness": 2,
-              "colorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "radiusRange": [
-                0,
-                50
+            "textLabel": {
+              "field": null,
+              "color": [
+                255,
+                255,
+                255
               ],
-              "hi-precision": false
+              "size": 50,
+              "offset": [
+                0,
+                0
+              ],
+              "anchor": "middle"
             }
           },
           "visualChannels": {
@@ -122,105 +69,140 @@
           }
         },
         {
-          "id": "ull4rj",
+          "id": "u0bt3e",
+          "type": "point",
+          "config": {
+            "dataId": "my_data",
+            "label": "destination",
+            "color": [
+              214,
+              113,
+              0
+            ],
+            "columns": {
+              "lat": "destination_lat",
+              "lng": "destination_lon",
+              "altitude": null
+            },
+            "isVisible": true,
+            "visConfig": {
+              "radius": 10,
+              "fixedRadius": false,
+              "opacity": 0.8,
+              "outline": false,
+              "thickness": 2,
+              "colorRange": {
+                "name": "Global Warming",
+                "type": "sequential",
+                "category": "Uber",
+                "colors": [
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
+              },
+              "radiusRange": [
+                0,
+                50
+              ],
+              "hi-precision": false
+            },
+            "textLabel": {
+              "field": null,
+              "color": [
+                255,
+                255,
+                255
+              ],
+              "size": 50,
+              "offset": [
+                0,
+                0
+              ],
+              "anchor": "middle"
+            }
+          },
+          "visualChannels": {
+            "colorField": null,
+            "colorScale": "quantile",
+            "sizeField": null,
+            "sizeScale": "linear"
+          }
+        },
+        {
+          "id": "sfxkjj",
           "type": "arc",
           "config": {
             "dataId": "my_data",
-            "label": "first -> last arc",
+            "label": "total_time",
             "color": [
-              146,
-              38,
-              198,
-              255
+              23,
+              184,
+              190
             ],
             "columns": {
-              "lat0": "first_camera_lat",
-              "lng0": "first_camera_lon",
-              "lat1": "second_camera_lat",
-              "lng1": "second_camera_lon"
+              "lat0": "origin_lat",
+              "lng0": "origin_lon",
+              "lat1": "destination_lat",
+              "lng1": "destination_lon"
             },
             "isVisible": true,
             "visConfig": {
               "opacity": 0.8,
               "thickness": 2,
               "colorRange": {
-                "name": "Ice And Fire",
+                "name": "Uber Viz Diverging 1.5",
                 "type": "diverging",
                 "category": "Uber",
                 "colors": [
-                  "#0198BD",
-                  "#49E3CE",
-                  "#E8FEB5",
-                  "#FEEDB1",
-                  "#FEAD54",
-                  "#D50255"
+                  "#00939C",
+                  "#5DBABF",
+                  "#BAE1E2",
+                  "#F8C0AA",
+                  "#DD7755",
+                  "#C22E00"
                 ],
                 "reversed": false
               },
               "sizeRange": [
                 0,
-                10
+                7
               ],
-              "targetColor": null,
+              "targetColor": [
+                255,
+                248,
+                51
+              ],
               "hi-precision": false
+            },
+            "textLabel": {
+              "field": null,
+              "color": [
+                255,
+                255,
+                255
+              ],
+              "size": 50,
+              "offset": [
+                0,
+                0
+              ],
+              "anchor": "middle"
             }
           },
           "visualChannels": {
             "colorField": {
-              "name": "vehicle_type",
-              "type": "string"
+              "name": "total_time",
+              "type": "real"
             },
-            "colorScale": "ordinal",
-            "sizeField": null,
-            "sizeScale": "linear"
-          }
-        },
-        {
-          "id": "dw8iqe",
-          "type": "line",
-          "config": {
-            "dataId": "my_data",
-            "label": "first -> last line",
-            "color": [
-              136,
-              87,
-              44
-            ],
-            "columns": {
-              "lat0": "first_camera_lat",
-              "lng0": "first_camera_lon",
-              "lat1": "second_camera_lat",
-              "lng1": "second_camera_lon"
+            "colorScale": "quantize",
+            "sizeField": {
+              "name": "total_time",
+              "type": "real"
             },
-            "isVisible": false,
-            "visConfig": {
-              "opacity": 0.8,
-              "thickness": 2,
-              "colorRange": {
-                "name": "Global Warming",
-                "type": "sequential",
-                "category": "Uber",
-                "colors": [
-                  "#5A1846",
-                  "#900C3F",
-                  "#C70039",
-                  "#E3611C",
-                  "#F1920E",
-                  "#FFC300"
-                ]
-              },
-              "sizeRange": [
-                0,
-                10
-              ],
-              "targetColor": null,
-              "hi-precision": false
-            }
-          },
-          "visualChannels": {
-            "colorField": null,
-            "colorScale": "quantile",
-            "sizeField": null,
             "sizeScale": "linear"
           }
         }
@@ -229,11 +211,11 @@
         "tooltip": {
           "fieldsToShow": {
             "my_data": [
-              "VendorID",
-              "tpep_pickup_datetime",
-              "tpep_dropoff_datetime",
-              "passenger_count",
-              "trip_distance"
+              "origin_id",
+              "destination_id",
+              "trasport_type",
+              "switches",
+              "total_time"
             ]
           },
           "enabled": true
@@ -247,12 +229,12 @@
       "splitMaps": []
     },
     "mapState": {
-      "bearing": 0,
-      "dragRotate": false,
-      "latitude": 32.06666,
-      "longitude":  34.783333,
-      "pitch": 1,
-      "zoom": 12,
+      "bearing": 24,
+      "dragRotate": true,
+      "latitude": 32.17853611827228,
+      "longitude": 34.822296931786944,
+      "pitch": 50,
+      "zoom": 12.68556502468024,
       "isSplit": false
     },
     "mapStyle": {
@@ -264,7 +246,8 @@
         "border": false,
         "building": true,
         "water": true,
-        "land": true
+        "land": true,
+        "3d building": false
       },
       "mapStyles": {}
     }

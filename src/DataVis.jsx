@@ -5,10 +5,10 @@ import { fetchQuery, graphql } from 'react-relay';
 import environment from './Environment';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 import KeplerGl from 'kepler.gl';
-import { addDataToMap, forwardTo } from 'kepler.gl/actions';
+import { toggleFullScreen, addDataToMap, forwardTo } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
 
-import zBeeConfig from '../data/zbee-config.json';
+import zBeeConfig from '../data/kepler.map.config.json';
 
 const MAPBOX_TOKEN = process.env.MapboxAccessToken;
 
@@ -76,6 +76,7 @@ class DataVis extends React.Component {
   render() {
         return (
             <div style={{position: 'absolute', width: '100%', height: '100%', minHeight: '70vh'}}>
+              <button onClick={() => this.props.keplerGlDispatch(toggleFullScreen())}/>
               <AutoSizer>
                 {({height, width}) => (
                   <KeplerGl

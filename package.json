@@ -14,7 +14,7 @@
     "babel-loader": "7.1.2",
     "babel-plugin-relay": "1.6.2",
     "graphql": "14.0.2",
-    "kepler.gl": "0.1.6",
+    "kepler.gl": "^0.2.1-beta.1",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
     "react": "^16.7.0",
