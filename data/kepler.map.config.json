@@ -137,7 +137,7 @@
           "type": "arc",
           "config": {
             "dataId": "my_data",
-            "label": "total_time",
+            "label": "Trip info",
             "color": [
               23,
               184,
@@ -211,7 +211,7 @@
         "tooltip": {
           "fieldsToShow": {
             "my_data": [
-              "origin_id",
+              "origin_name",
               "destination_id",
               "trasport_type",
               "switches",
