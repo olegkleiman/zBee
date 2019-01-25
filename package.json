@@ -13,6 +13,8 @@
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
     "babel-plugin-relay": "1.6.2",
+    "bootstrap": "^4.2.1",
+    "css-loader": "^2.1.0",
     "graphql": "14.0.2",
     "kepler.gl": "^0.2.1-beta.1",
     "lodash": "^4.17.11",
@@ -24,9 +26,11 @@
     "react-relay": "1.6.2",
     "react-virtualized": "^9.21.0",
     "react-vis": "1.11.2",
+    "reactstrap": "^7.1.0",
     "redux": "4.0.0",
     "redux-actions": "2.6.1",
     "relay-compiler": "1.6.2",
+    "style-loader": "^0.23.1",
     "webpack": "^4.28.4"
   },
   "devDependencies": {

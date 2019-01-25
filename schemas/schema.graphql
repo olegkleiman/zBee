@@ -11,7 +11,14 @@ interface INode {
   id: ID!
 }
 
+type Origin implements INode {
+  id: ID!
+  originId: Int
+  name: String
+}
+
 type Query {
+  origins: [Origin]
   keplerDataUrl(from: Date!, till: Date!): String
 }
 

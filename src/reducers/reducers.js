@@ -42,4 +42,24 @@ const reducers = combineReducers({
   app: reducer
 });
 
-export default reducers;
+const composedReducer = (state, action) => {
+ switch (action.type) {
+   case 'QUERY_SUCCESS':
+     return {
+       ...state,
+       keplerGl: {
+         ...state.keplerGl,
+
+         // 'map' is the id of the keplerGl instance
+         map: {
+            ...state.keplerGl.map,
+            visState: visStateUpdaters.updateVisDataUpdater(
+              state.keplerGl.map.visState, {datasets: action.payload})
+         }
+       }
+     };
+ }
+ return reducers(state, action);
+};
+
+export default composedReducer;

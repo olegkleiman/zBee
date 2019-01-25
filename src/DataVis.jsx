@@ -4,9 +4,19 @@ import { connect } from 'react-redux';
 import { fetchQuery, graphql } from 'react-relay';
 import environment from './Environment';
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
-import KeplerGl from 'kepler.gl';
+// import KeplerGl from 'kepler.gl';
 import { toggleFullScreen, addDataToMap, forwardTo } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
+import {injectComponents, PanelHeaderFactory} from 'kepler.gl/components';
+import OriginFilter from './OriginFilter';
+
+// define custom header
+const myCustomHeaderFactory = () => OriginFilter;
+
+// Inject custom header into Kepler.gl, replacing default
+const KeplerGl = injectComponents([
+  [PanelHeaderFactory, myCustomHeaderFactory]
+]);
 
 import zBeeConfig from '../data/kepler.map.config.json';
 
@@ -76,16 +86,18 @@ class DataVis extends React.Component {
   render() {
         return (
             <div style={{position: 'absolute', width: '100%', height: '100%', minHeight: '70vh'}}>
-              <button onClick={() => this.props.keplerGlDispatch(toggleFullScreen())}/>
               <AutoSizer>
                 {({height, width}) => (
-                  <KeplerGl
-                    mapboxApiAccessToken={MAPBOX_TOKEN}
-                    id="map"
-                    width={width}
-                    height={height}
-                    placeholder={'ddd'}
-                  />
+                  <div>
+                    <button onClick={() => props.keplerGlDispatch(toggleFullScreen())}/>
+                    <KeplerGl
+                      mapboxApiAccessToken={MAPBOX_TOKEN}
+                      id="map"
+                      version='0.2.1-beta'
+                      width={width}
+                      height={height}
+                    />
+                  </div>
                 )}
               </AutoSizer>
             </div>

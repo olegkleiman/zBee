@@ -212,7 +212,7 @@
           "fieldsToShow": {
             "my_data": [
               "origin_name",
-              "destination_id",
+              "destination_name",
               "trasport_type",
               "switches",
               "total_time"
@@ -231,10 +231,10 @@
     "mapState": {
       "bearing": 24,
       "dragRotate": true,
-      "latitude": 32.17853611827228,
-      "longitude": 34.822296931786944,
+      "latitude": 32.1798012801882,
+      "longitude": 34.81233905523945,
       "pitch": 50,
-      "zoom": 12.68556502468024,
+      "zoom": 13.778693431686987,
       "isSplit": false
     },
     "mapStyle": {
