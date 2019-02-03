@@ -19,8 +19,6 @@ const KeplerGl = injectComponents([
   // [SidePanelFactory, nullComponentFactory]
 ]);
 
-import oldBeeConfig from '../data/kepler.map.config.json';
-
 const MAPBOX_TOKEN = process.env.MapboxAccessToken;
 
 const keplerQuery = graphql`
