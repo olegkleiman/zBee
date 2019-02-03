@@ -7,7 +7,7 @@ import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer';
 // import KeplerGl from 'kepler.gl';
 import { toggleFullScreen, addDataToMap, forwardTo } from 'kepler.gl/actions';
 import Processors from 'kepler.gl/processors';
-import {injectComponents, PanelHeaderFactory} from 'kepler.gl/components';
+import {withState, injectComponents, PanelHeaderFactory} from 'kepler.gl/components';
 import OriginFilter from './OriginFilter';
 
 // define custom header
@@ -15,10 +15,11 @@ const myCustomHeaderFactory = () => OriginFilter;
 
 // Inject custom header into Kepler.gl, replacing default
 const KeplerGl = injectComponents([
-  [PanelHeaderFactory, myCustomHeaderFactory]
+  [PanelHeaderFactory, myCustomHeaderFactory],
+  // [SidePanelFactory, nullComponentFactory]
 ]);
 
-import zBeeConfig from '../data/kepler.map.config.json';
+import oldBeeConfig from '../data/kepler.map.config.json';
 
 const MAPBOX_TOKEN = process.env.MapboxAccessToken;
 
@@ -26,6 +27,7 @@ const keplerQuery = graphql`
   query DataVis_Query($from: Date!,
                       $till: Date!) {
       keplerDataUrl(from: $from, till: $till)
+      keplerConfigUrl
   }
 `;
 
@@ -53,8 +55,11 @@ class DataVis extends React.Component {
 
         const gqlData = await fetchQuery(environment, keplerQuery, queryVariables);
 
-        const resp = await fetch(gqlData.keplerDataUrl);
+        let resp = await fetch(gqlData.keplerDataUrl);
         const zBeeTrips = await resp.text();
+
+        resp = await fetch(gqlData.keplerConfigUrl);
+        const zBeeConfig = await resp.json();
 
         const data = Processors.processCsvData(zBeeTrips);
 
