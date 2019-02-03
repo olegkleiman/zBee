@@ -22,10 +22,11 @@ const KeplerGl = injectComponents([
 const MAPBOX_TOKEN = process.env.MapboxAccessToken;
 
 const keplerQuery = graphql`
-  query DataVis_Query($from: Date!,
+  query DataVis_Query($projectName: String!,
+                      $from: Date!,
                       $till: Date!) {
-      keplerDataUrl(from: $from, till: $till)
-      keplerConfigUrl
+      keplerDataUrl(projectName: $projectName, from: $from, till: $till)
+      keplerConfigUrl(projectName: $projectName)
   }
 `;
 
@@ -46,7 +47,8 @@ class DataVis extends React.Component {
 
       const queryVariables = {
         from: '09/24/2018', //this.props.app.fromDate,
-        till: '09/25/2018' //this.props.app.tillDate
+        till: '09/25/2018', //this.props.app.tillDate
+        projectName: "commutes"
       };
 
       try {
