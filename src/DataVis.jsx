@@ -10,14 +10,16 @@ import Processors from 'kepler.gl/processors';
 import {withState, injectComponents, PanelHeaderFactory} from 'kepler.gl/components';
 import OriginFilter from './OriginFilter';
 
-// define custom header
-const myCustomHeaderFactory = () => OriginFilter;
+import KeplerGl from 'kepler.gl';
 
-// Inject custom header into Kepler.gl, replacing default
-const KeplerGl = injectComponents([
-  [PanelHeaderFactory, myCustomHeaderFactory],
-  // [SidePanelFactory, nullComponentFactory]
-]);
+// // define custom header
+// const myCustomHeaderFactory = () => OriginFilter;
+//
+// // Inject custom header into Kepler.gl, replacing default
+// const KeplerGl = injectComponents([
+//   [PanelHeaderFactory, myCustomHeaderFactory],
+//   // [SidePanelFactory, nullComponentFactory]
+// ]);
 
 const MAPBOX_TOKEN = process.env.MapboxAccessToken;
 

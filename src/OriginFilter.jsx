@@ -65,8 +65,9 @@ class OriginFilter extends React.Component<Props, State> {
         </DropdownToggle>
         <DropdownMenu right>
           {
-            this.state.origins.map(origin => {
-              return (<DropdownItem onClick={::this.originSelected}>{origin.name}</DropdownItem>)
+            this.state.origins.map((origin, index) => {
+              return (<DropdownItem key={index}
+                        onClick={::this.originSelected}>{origin.name}</DropdownItem>)
             })
           }
         </DropdownMenu>
