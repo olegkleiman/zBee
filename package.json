@@ -5,8 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack -d --watch",
-    "_relay": "babel-node ./scripts/getSchema.js https://zbeegqlserver.azurewebsites.net > ./schemas/schema.graphql && relay-compiler --watch --src ./src --schema schemas/schema.graphql --extensions=jsx",
-    "relay": "babel-node ./scripts/getSchema.js http://localhost:4000 > ./schemas/schema.graphql && relay-compiler --watch --src ./src --schema schemas/schema.graphql --extensions=jsx",
+    "relay": "babel-node ./scripts/getSchema.js https://zbeegqlserver.herokuapp.com > ./schemas/schema.graphql && relay-compiler --watch --src ./src --schema schemas/schema.graphql --extensions=jsx",
     "compile": "relay-compiler --src ./src --schema ./schemas/schema.graphql --extensions=jsx"
   },
   "dependencies": {
