@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack -d --watch",
+    "heroku-postbuild": "relay && webpack -p",
     "relay": "babel-node ./scripts/getSchema.js https://zbeegqlserver.herokuapp.com > ./schemas/schema.graphql && relay-compiler --watch --src ./src --schema schemas/schema.graphql --extensions=jsx",
     "compile": "relay-compiler --src ./src --schema ./schemas/schema.graphql --extensions=jsx"
   },
