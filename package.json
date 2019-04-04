@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack -d --watch",
     "heroku-postbuild": "yarn relay && webpack -p",
+    "start": "serve",
     "relay": "babel-node ./scripts/getSchema.js https://zbeegqlserver.herokuapp.com > ./schemas/schema.graphql && relay-compiler --src ./src --schema schemas/schema.graphql --extensions=jsx",
     "compile": "relay-compiler --src ./src --schema ./schemas/schema.graphql --extensions=jsx"
   },
@@ -31,6 +32,7 @@
     "redux": "4.0.0",
     "redux-actions": "2.6.1",
     "relay-compiler": "1.6.2",
+    "serve": "^11.0.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.4"
   },
