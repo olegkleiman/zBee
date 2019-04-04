@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App.jsx';
 import store from './store';
+import DataProvider from './DataContext';
 
 render(<Provider store={store}>
           <App />

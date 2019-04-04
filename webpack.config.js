@@ -1,8 +1,6 @@
 var path = require('path');
 const webpack = require('webpack');
 
-var jsName = 'bundle.js';
-
 var BUILD_DIR = path.resolve(__dirname, 'public');
 
 var config = {
@@ -14,7 +12,7 @@ var config = {
       path: BUILD_DIR,
       filename: 'bundle.js',
       publicPath: '/public/',
-      chunkFilename: '[name].bundle.js'
+      chunkFilename: '[name].js'
   },
   stats: {
     colors: true,
